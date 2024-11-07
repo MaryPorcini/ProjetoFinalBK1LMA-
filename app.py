@@ -2,26 +2,28 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    # Lista de produtos com nome, preço e quantidade
-    produtos = [
+lista_produtos = [
         {"nome": "Cookie Recheado de Chocolate", "preco": 8, "quantidade": 15, "imagem": "doces.jpg"},
         {"nome": "Pão de Mel", "preco": 8, "quantidade": 10, "imagem": "doces.jpg"},
         {"nome": "Palha Italiana de Ninho", "preco": 7, "quantidade": 10, "imagem": "doces.jpg"},
         {"nome": "Palha Italiana de Chocolate", "preco": 7, "quantidade": 10, "imagem": "doces.jpg"},
     ]
-    return render_template('index.html', produtos=produtos)
+
+@app.route('/')
+def home():
+    # Lista de produtos com nome, preço e quantidade
+    
+    return render_template('index.html', produtos=lista_produtos)
 
 # Rota para exibir todos os produtos
 @app.route('/produtos')
-def lista_produtos():
-    return render_template('produtos.html', produtos=produtos)
+def produtos():
+    return render_template('produtos.html', produtos=lista_produtos)
 
 # Rota para simular a compra de um produto
 @app.route('/comprar/<int:produto_id>')
 def comprar(produto_id):
-    produto = next((p for p in produtos if p["id"] == produto_id), None)
+    produto = next((p for p in lista_produtos if p["id"] == produto_id), None)
     if produto:
         return render_template('comprar.html', produto=produto)
     return redirect(url_for('home'))
