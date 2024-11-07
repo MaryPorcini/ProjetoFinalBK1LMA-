@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Flask</title>
+    <title>Doce Mãe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Bem-vindo ao meu site!</h1>
-    <p>Este é um site simples feito com Python e Flask.</p>
+    <header>
+        <h1>Doce Mãe</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Doces irresistíveis para todas as ocasiões!</h2>
+        <p>Feitos com todo o carinho, com sabor de infância.</p>
+    </section>
+
+    <section class="products">
+        {% for produto in produtos %}
+        <div class="product-card">
+            <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}">
+            <h3>{{ produto['nome'] }}</h3>
+            <p class="preco">Preço: R$ {{ produto['preco'] }}</p>
+            <p class="quantidade">Disponível: {{ produto['quantidade'] }} unidades</p>
+            <button class="comprar">Comprar</button>
+        </div>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Doce Mãe. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
