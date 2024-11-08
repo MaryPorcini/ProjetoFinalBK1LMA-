@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprar - {{ produto['nome'] }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <header>
-        <h1>Doce Mãe</h1>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('contato') }}">Contato</a>
-            <a href="{{ url_for('sobre') }}">Sobre</a>
-        </nav>
-    </header>
+{% extends 'layout.html' %}
+{% block content %}
 
     <section class="comprar">
         <h2>Você está prestes a comprar {{ produto['nome'] }}</h2>
-        <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}">
+        <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}" class="buy">
         <p>Preço: R$ {{ produto['preco'] }}</p>
         <p>Quantidade disponível: {{ produto['quantidade'] }}</p>
         <button>Confirmar Compra</button>
     </section>
-</body>
-</html>
+    {% endblock %}

@@ -3,12 +3,12 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 lista_produtos = [
-        {"nome": "Cookie Recheado de Chocolate", "preco": 8, "quantidade": 15, "imagem": "cookies.jpg"},
-        {"nome": "Pão de Mel", "preco": 8, "quantidade": 10, "imagem": "pao de mel.jfif"},
-        {"nome": "Palha Italiana de Ninho", "preco": 7, "quantidade": 10, "imagem": "palha ninho.jpg"},
-        {"nome": "Palha Italiana de Chocolate", "preco": 7, "quantidade": 10, "imagem": "palha brigadeiro.jpg"},
-        {"nome": "Biscoitos Decorados", "preco": 6, "quantidade": 10, "imagem": "biscoitos.jpg"},
-        {"nome": "Kit Biscoitos Recheados", "preco": 15, "quantidade": 10, "imagem": "kit biscoitos.jpg"},
+        {"id": 1, "nome": "Cookie Recheado de Chocolate", "preco": 8, "quantidade": 15, "imagem": "cookies.jpg"},
+        {"id": 2, "nome": "Pão de Mel", "preco": 8, "quantidade": 10, "imagem": "pao de mel.jfif"},
+        {"id": 3, "nome": "Palha Italiana de Ninho", "preco": 7, "quantidade": 10, "imagem": "palha ninho.jpg"},
+        {"id": 4, "nome": "Palha Italiana de Chocolate", "preco": 7, "quantidade": 10, "imagem": "palha brigadeiro.jpg"},
+        {"id": 5, "nome": "Biscoitos Decorados", "preco": 6, "quantidade": 10, "imagem": "biscoitos.jpg"},
+        {"id": 6, "nome": "Kit Biscoitos Recheados", "preco": 15, "quantidade": 10, "imagem": "kit biscoitos.jpg"},
     ]
 
 @app.route('/')
