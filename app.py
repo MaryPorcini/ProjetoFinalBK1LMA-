@@ -33,13 +33,14 @@ def comprar(produto_id):
 # Rota para o formulário de contato
 @app.route('/contato', methods=['GET', 'POST'])
 def contato():
+    feedback= None
     if request.method == 'POST':
         nome = request.form['nome']
         email = request.form['email']
         mensagem = request.form['mensagem']
         # Aqui você pode processar o envio, salvar em um banco de dados ou enviar um e-mail
-        return redirect(url_for('home'))  # Simulando um envio com redirecionamento
-    return render_template('contato.html')
+        feedback = "Agradecemos por seu feedback. Fique de olho em seu email que logo entraremos em contato!"
+    return render_template('contato.html', feedback = feedback)
 
 # Rota para ver a história da loja
 @app.route('/sobre')

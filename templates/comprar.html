@@ -1,11 +1,34 @@
 {% extends 'layout.html' %}
-{% block content %}
 
+{% block content %}
     <section class="comprar">
-        <h2>Você está prestes a comprar {{ produto['nome'] }}</h2>
-        <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}" class="buy">
-        <p>Preço: R$ {{ produto['preco'] }}</p>
-        <p>Quantidade disponível: {{ produto['quantidade'] }}</p>
-        <button>Confirmar Compra</button>
+        <h2>Você está prestes a comprar <strong>{{ produto['nome'] }}</strong></h2>
+        <div class="produto-imagem">
+            <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}" class="buy">
+        </div>
+        
+        <div class="produto-info">
+            <p><strong>Preço:</strong> R$ {{ produto['preco'] }}</p>
+            <p><strong>Quantidade disponível:</strong> {{ produto['quantidade'] }}</p>
+            
+            <!-- Formulário para selecionar a quantidade -->
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" max="{{ produto['quantidade'] }}" value="1" required>
+        </div>
+        
+        <button id="btn-compra" class="btn-compra">Confirmar Compra</button>
+
+        <!-- Mensagem de sucesso que será exibida após a compra -->
+        <div id="msg-sucesso" class="msg-sucesso" style="display: none;">
+            <p>Compra efetuada com sucesso! Agradecemos pela sua compra.</p>
+        </div>
     </section>
-    {% endblock %}
+
+    <script>
+        document.getElementById('btn-compra').addEventListener('click', function() {
+            // Exibe a mensagem de sucesso
+            document.getElementById('msg-sucesso').style.display = 'block';
+        });
+    </script>
+
+{% endblock %}
