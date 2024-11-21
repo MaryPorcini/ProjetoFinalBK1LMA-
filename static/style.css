@@ -1,13 +1,99 @@
-* {
+.contato {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contato h2 {
+    font-size: 24px;
+    color: #cba39b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contato label {
+    font-size: 14px;
+    color: #cba39b;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+.contato input[type="text"], 
+.contato input[type="email"], 
+.contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contato textarea {
+    height: 150px;
+}
+
+.contato button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6e61c6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contato button:hover {
+    background-color: #ff6e61c6;
+}
+
+.contato input:invalid, .contato textarea:invalid {
+    border-color: #e74c3c;
+}
+
+.contato input:focus, .contato textarea:focus {
+    border-color: #e39d9d;
+    outline: none;
+}
+
+.mensagem-feedback {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.titulo{
+    text-align: center;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.texto{ 
+    color: #ffffff;
+    display: block;
+    margin: 20px;
+  
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #ff6e61c6;
-    color: #333;
+    color: #cba39b;
     line-height: 1.6;
 }
 
@@ -55,7 +141,7 @@ header nav a:hover {
 
 .hero p {
     font-size: 1.2rem;
-    color: #333;
+    color: #cba39b;
 }
 
 /* Cards de Produtos */
@@ -101,8 +187,10 @@ header nav a:hover {
 }
 
 .product-card .preco, .product-card .quantidade {
-    font-size: 1.1rem;
-    color: #333;
+    font-size:large;
+    text-align:center;
+    
+    color: #cba39b;
 }
 
 .product-card .comprar {
@@ -144,6 +232,78 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Estilo da seção de compra */
+.comprar {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Estilo da imagem do produto */
+.produto-imagem img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo das informações do produto */
+.produto-info {
+    margin: 20px 0;
+}
+
+.produto-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Estilo para o campo de quantidade */
+#quantidade {
+    width: 80px;
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo do botão de compra */
+.btn-compra {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-compra:hover {
+    background-color: #f9b5b5;
+}
+
+/* Estilo da mensagem de sucesso */
+.msg-sucesso {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9b5b5;
+    color: #cf5f54;
+    border: 1px solid #f9b5b5;
+    border-radius: 5px;
+    text-align: center;
+}
+
 
 /* Animações */
 @keyframes fadeIn {
@@ -153,4 +313,5 @@ footer {
     100% {
         opacity: 1;
     }
+    
 }
