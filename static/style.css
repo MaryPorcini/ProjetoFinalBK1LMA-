@@ -297,9 +297,9 @@ footer {
 .msg-sucesso {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f9b5b5;
-    color: #cf5f54;
-    border: 1px solid #f9b5b5;
+    background-color: #b4ffc3;
+    color: #000000;
+    border: 1px solid #73ff92;
     border-radius: 5px;
     text-align: center;
 }

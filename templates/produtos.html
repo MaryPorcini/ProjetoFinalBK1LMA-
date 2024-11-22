@@ -7,7 +7,6 @@
             <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}" >
             <h3>{{ produto['nome'] }}</h3>
             <p class="preco">Preço: R$ {{ produto['preco'] }}</p>
-            <p class="quantidade">Disponível: {{ produto['quantidade'] }} unidades</p>
             <a href="{{ url_for('comprar', produto_id=produto['id']) }}" class="comprar">Comprar</a>
         </div>
         {% endfor %}
