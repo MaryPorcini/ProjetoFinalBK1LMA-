@@ -3,7 +3,7 @@
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #fafafa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -151,6 +151,7 @@ header nav a:hover {
     margin: 50px 0;
     padding: 0 20px;
     flex-wrap: wrap;
+    padding-bottom: 20;
 }
 
 .product-card {
@@ -162,6 +163,7 @@ header nav a:hover {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .product-card:hover {
@@ -191,6 +193,7 @@ header nav a:hover {
     text-align:center;
     
     color: #cba39b;
+    padding-bottom: 20px;
 }
 
 .product-card .comprar {
@@ -287,6 +290,13 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
 }
 
 .btn-compra:hover {

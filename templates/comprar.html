@@ -10,24 +10,43 @@
         <div class="produto-info">
             <p><strong>Preço:</strong> R$ {{ produto['preco'] }}</p>
             
-            <!-- Formulário para selecionar a quantidade -->
-            <label for="quantidade">Quantidade:</label>
-            <input type="number" id="quantidade" name="quantidade" min="1" max="{{ produto['quantidade'] }}" value="1" required>
+            <!-- Formulário para selecionar a quantidade e dados do comprador -->
+            <form method="POST" action="/comprar/{{ produto['id'] }}">
+                <section class="contato">
+                <!-- Campo para o nome do comprador -->
+                <div class="campo-form">
+                <label for="nome">Digite seu nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                </div>
+
+                <!-- Campo para a localização do comprador -->
+                <div class="campo-form">
+                <label for="localizacao">Digite a localização para entrega:</label>
+                <input type="text" id="localizacao" name="localizacao" placeholder="Só fazemos entregas na região de Barretos" required>
+                </div>
+
+                <div class="campo-form">
+                <label for="entrega">Digite a data para a entrega:</label>
+                <input type="text" id="entrega" name="entrega" placeholder="Só entregamos as encomendas após 5 dias da compra do produto" required>
+                </div>
+
+                <!-- Campo para selecionar a quantidade -->
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" max="100" value="1" required>
+                </section>
+                <button type="submit" class="btn-compra">Confirmar Compra</button>
+            </form>
         </div>
         
-        <button id="btn-compra" class="btn-compra">Confirmar Compra</button>
-
-        <!-- Mensagem de sucesso que será exibida após a compra -->
-        <div id="msg-sucesso" class="msg-sucesso" style="display: none;">
-            <p>Compra efetuada com sucesso! Agradecemos pela sua compra.</p>
-        </div>
+        {% if compra_concluida %}
+            <!-- Mensagem de sucesso após a compra -->
+            <div id="msg-sucesso" class="msg-sucesso">
+                <p>Compra efetuada com sucesso! Agradecemos pela sua compra! Sua encomenda está sendo feita.</p>
+                <p><strong>Nome:</strong> {{ nome }}</p>
+                <p><strong>Localização:</strong> {{ localizacao }}</p>
+                <p><strong>Entrega:</strong> {{ entrega }}</p>
+                <p><strong>Valor Total:</strong> R$ {{ valor_total }}</p>
+            </div>
+        {% endif %}
     </section>
-
-    <script>
-        document.getElementById('btn-compra').addEventListener('click', function() {
-            // Exibe a mensagem de sucesso
-            document.getElementById('msg-sucesso').style.display = 'block';
-        });
-    </script>
-
 {% endblock %}
